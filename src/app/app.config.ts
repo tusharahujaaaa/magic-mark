@@ -9,6 +9,9 @@ import { errorInterceptor } from './core/interceptors/error.interceptor';
 import { cacheInterceptor } from './core/interceptors/cache.interceptor';
 import { loaderInterceptor } from './core/interceptors/loader.interceptor';
 
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeuix/themes/aura';
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -21,6 +24,11 @@ export const appConfig: ApplicationConfig = {
         loaderInterceptor
       ])
     ),
+    providePrimeNG({
+      theme: {
+        preset: Aura
+      }
+    }),
     provideClientHydration(withEventReplay())
   ]
 };
