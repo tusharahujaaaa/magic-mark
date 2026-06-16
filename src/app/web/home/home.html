@@ -1,7 +1,476 @@
-<div class="home-container">
-  <h1>Welcome to MagicMarks</h1>
-  <p>Your AI-Powered Learning Companion</p>
-  <div class="actions">
-    <button routerLink="/login" class="btn">Go to Login</button>
+<!-- Top Navigation Bar -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo-area">
+      <div class="logo-spark">
+        <span class="material-symbols-outlined">auto_stories</span>
+      </div>
+      <span class="logo-text">Magic<span>Marks</span></span>
+    </div>
+    
+    <nav class="nav-links">
+      <a href="#explore">Explore Catalog</a>
+      <a href="#solutions">AI Solutions</a>
+      <a href="#mentor">Magic Mentor AI</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    
+    <div class="nav-actions">
+      <button routerLink="/login" class="btn btn-login-white">Login</button>
+      <button routerLink="/login" class="btn btn-dark-accent">Start Free</button>
+    </div>
   </div>
-</div>
+</header>
+
+<!-- Bold, Light Glowing Hero Section (Extramarks Style) -->
+<section class="hero-section light-hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="badge-glow">
+        <span class="material-symbols-outlined">auto_awesome</span>
+        <span>The Intelligent Classroom Era Begins</span>
+      </div>
+      <h1 class="hero-title">
+        Crack Exams Smarter <br>
+        with <span>MagicMarks + AI Teacher</span>
+      </h1>
+      <p class="hero-subtitle">
+        Unlock next-generation engineering education through syllabus-matched pathways, active visualization checkpoints, and 24/7 contextual doubts resolution.
+      </p>
+      
+      <!-- Premium Glassmorphic Search Bar (Wireframe Page 1) -->
+      <div class="hero-search-container">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" placeholder="Search engineering courses, topics, or doubts..." class="hero-search-input">
+        <button class="btn btn-orange btn-search">Search</button>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#explore" class="btn btn-orange btn-lg">Explore Courses</a>
+        <a routerLink="/login" class="btn btn-outline-white btn-lg">Free Demo</a>
+      </div>
+    </div>
+    
+    <!-- Hero Visual: AI Orbital sphere + Interactive Video Mockup -->
+    <div class="hero-visual">
+      <div class="orbital-glow-container">
+        <div class="orbital-track">
+          <div class="orbit-node node-1"><span class="material-symbols-outlined">terminal</span></div>
+          <div class="orbit-node node-2"><span class="material-symbols-outlined">calculate</span></div>
+          <div class="orbit-node node-3"><span class="material-symbols-outlined">analytics</span></div>
+          <div class="orbit-node node-4"><span class="material-symbols-outlined">psychology</span></div>
+          <div class="central-sphere">
+            <span class="ai-text">AI</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video player preview -->
+      <div class="mock-video-player">
+        <div class="video-screen">
+          <div class="play-button-overlay">
+            <span class="material-symbols-outlined play-icon">play_arrow</span>
+          </div>
+          <div class="video-bar">
+            <span class="video-title">Introduction to Algorithms</span>
+            <div class="video-progress">
+              <div class="progress-fill" style="width: 45%"></div>
+            </div>
+            <span class="video-time">12:40 / 30:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pioneering Next-Gen Education Tabbed Slider -->
+<section id="solutions" class="solutions-tabs-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Pioneering Next-gen Education <br>with AI-based Solutions</h2>
+      <p>Discover customized systems for schools, students, and tutors</p>
+    </div>
+    
+    <!-- Tabs Selectors -->
+    <div class="solutions-tabs-bar">
+      <button 
+        *ngFor="let tab of tabsList" 
+        (click)="setTab(tab.id)"
+        [class.active]="activeTab() === tab.id"
+        class="tab-select-btn"
+      >
+        {{ tab.label }}
+      </button>
+    </div>
+    
+    <!-- Dynamic Tab Content Pane -->
+    <div class="tab-content-pane">
+      <div class="tab-grid animate-fade-in" *ngIf="getActiveTabContent() as tab">
+        <!-- Content Details -->
+        <div class="tab-text-side">
+          <h3>{{ tab.title }}</h3>
+          <p>{{ tab.description }}</p>
+          <ul class="tab-bullets">
+            <li *ngFor="let point of tab.bulletPoints">
+              <span class="material-symbols-outlined">arrow_right_alt</span>
+              {{ point }}
+            </li>
+          </ul>
+          <button routerLink="/login" class="btn btn-orange">Learn More</button>
+        </div>
+        
+        <!-- Mock View Side -->
+        <div class="tab-visual-side">
+          <div class="mock-dashboard-preview">
+            <div class="mock-dash-top">
+              <span class="mock-tag">{{ tab.label }} Space</span>
+              <div class="mock-window-buttons"><span></span><span></span><span></span></div>
+            </div>
+            <div class="mock-dash-body">
+              <div class="mock-stat-grid">
+                <div class="stat-box">
+                  <h6>Progress</h6>
+                  <div class="circle-progress-ring">78%</div>
+                </div>
+                <div class="stat-box">
+                  <h6>Active Streak</h6>
+                  <div class="streak-count">
+                    <span class="material-symbols-outlined text-orange">local_fire_department</span>
+                    <span>12 Days</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mock-activity-line">
+                <span class="material-symbols-outlined text-teal">check_circle</span>
+                <span>All core syllabus tracks synchronized successfully.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Showcases: Saturated Full-Width Color Blocks (Extramarks Style) -->
+
+<!-- BLOCK 1: Smart Class Plus (Teal Block) -->
+<section class="full-width-block block-teal">
+  <div class="block-container">
+    <div class="block-grid">
+      <div class="block-info">
+        <div class="block-badge">SMART CLASS PLUS</div>
+        <h2>AI-powered solutions for next-gen classrooms</h2>
+        <p>
+          Transform traditional engineering lectures. Deliver 3D animated mathematical derivations, trace network packets live in lecture slides, and assign batch checkpoints instantly.
+        </p>
+        <button routerLink="/login" class="btn btn-white-solid">Get Started</button>
+      </div>
+      
+      <!-- Vector Classroom Art Mockup -->
+      <div class="block-visual">
+        <div class="vector-classroom">
+          <div class="smart-board">
+            <span class="board-text">Graph traversals: BFS & DFS</span>
+            <div class="board-graph">
+              <span class="node">A</span>
+              <span class="node">B</span>
+              <span class="node">C</span>
+              <div class="edge"></div>
+              <div class="edge"></div>
+            </div>
+          </div>
+          <div class="desk-row">
+            <span class="student-avatar"></span>
+            <span class="student-avatar"></span>
+            <span class="student-avatar"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 2: Interactive Learn (Blue Block) -->
+<section class="full-width-block block-blue">
+  <div class="block-container">
+    <div class="block-grid reverse">
+      <div class="block-info">
+        <div class="block-badge">LEARNING APP</div>
+        <h2>Learn what you want, how you want</h2>
+        <p>
+          Accelerate your computer science studies with integrated web compilation sandboxes. Run, test, and debug your code without installing heavy software.
+        </p>
+        <button routerLink="/login" class="btn btn-white-solid">Explore Sandbox</button>
+      </div>
+      
+      <!-- Vector Workstation Art Mockup -->
+      <div class="block-visual">
+        <div class="vector-workstation">
+          <div class="laptop-shell">
+            <div class="laptop-screen">
+              <div class="editor-header">
+                <span>main.cpp</span>
+                <span class="text-green">RUNNING</span>
+              </div>
+              <pre><code>#include &lt;iostream&gt;
+int main() {{ '{' }}
+    std::cout &lt;&lt; "Hello World!";
+    return 0;
+{{ '}' }}</code></pre>
+            </div>
+            <div class="laptop-keyboard"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 3: Magic Mentor AI (Purple Block) -->
+<section id="mentor" class="full-width-block block-purple">
+  <div class="block-container">
+    <div class="block-grid">
+      <div class="block-info">
+        <div class="block-badge">MAGIC MENTOR</div>
+        <h2>Innovate doubt solving with Extra Intelligence</h2>
+        <p>
+          Unblock your code or equations instantly. Click on any of the common student doubts below to trigger the Magic Mentor compiler and solve it step-by-step.
+        </p>
+        
+        <div class="block-doubts-list">
+          <button 
+            *ngFor="let doubt of sampleDoubts" 
+            (click)="askMentor(doubt.id)"
+            [class.active]="activeQuestionId() === doubt.id"
+            class="doubt-chip"
+          >
+            <span class="material-symbols-outlined">help</span>
+            {{ doubt.question }}
+          </button>
+        </div>
+      </div>
+      
+      <!-- Interactive IDE terminal -->
+      <div class="block-visual">
+        <div class="block-ide-shell">
+          <div class="ide-bar">
+            <div class="ide-dots"><span></span><span></span><span></span></div>
+            <span class="ide-label">Magic Mentor AI</span>
+          </div>
+          <div class="ide-content">
+            <div class="ide-message">
+              <span class="material-symbols-outlined text-purple">smart_toy</span>
+              <p>{{ mentorMessage() }}</p>
+            </div>
+            
+            <div *ngIf="mentorCode()" class="ide-code-box animate-fade-in">
+              <pre><code>{{ mentorCode() }}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Course Catalog Filter Section -->
+<section id="explore" class="catalog-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Curated Engineering Curriculum</h2>
+      <p>Explore high-fidelity courses packed with code sandboxes and interactive checkpoints</p>
+    </div>
+    
+    <!-- Filter Tabs -->
+    <div class="tabs-container">
+      <button (click)="setCategory('all')" [class.active]="selectedCategory() === 'all'" class="tab-btn">All Subjects</button>
+      <button (click)="setCategory('core')" [class.active]="selectedCategory() === 'core'" class="tab-btn">Core Computer Science</button>
+      <button (click)="setCategory('systems')" [class.active]="selectedCategory() === 'systems'" class="tab-btn">Systems Engineering</button>
+      <button (click)="setCategory('math')" [class.active]="selectedCategory() === 'math'" class="tab-btn">Engineering Mathematics</button>
+    </div>
+    
+    <!-- Cards Grid -->
+    <div class="course-grid">
+      <div *ngFor="let course of filterCourses()" class="course-card">
+        <div class="course-header">
+          <span class="material-symbols-outlined course-icon">{{ course.icon }}</span>
+          <div class="course-tag" [ngClass]="course.category">{{ course.category | uppercase }}</div>
+        </div>
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+        <div class="course-details">
+          <span><span class="material-symbols-outlined">schedule</span>{{ course.duration }}</span>
+          <span><span class="material-symbols-outlined">layers</span>{{ course.modules }} Modules</span>
+        </div>
+        <div class="course-footer">
+          <span class="slot-req">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            {{ course.slots }} Slot
+          </span>
+          <button routerLink="/login" class="btn btn-outline btn-sm">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics Grid -->
+<section class="statistics-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Transforming engineering education for generations</h2>
+      <p>Together towards academic excellence and industrial readiness</p>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-card card-orange">
+        <span class="material-symbols-outlined text-orange">school</span>
+        <h3>15,000+</h3>
+        <p>Active Students</p>
+      </div>
+      <div class="stat-card card-teal">
+        <span class="material-symbols-outlined text-teal">groups</span>
+        <h3>3,200+</h3>
+        <p>Expert Mentors</p>
+      </div>
+      <div class="stat-card card-blue">
+        <span class="material-symbols-outlined text-blue">play_lesson</span>
+        <h3>90,000+</h3>
+        <p>Checkpoint Videos</p>
+      </div>
+      <div class="stat-card card-purple">
+        <span class="material-symbols-outlined text-purple">question_mark</span>
+        <h3>17,00,000+</h3>
+        <p>Practice Questions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Subscriptions Section -->
+<section id="pricing" class="pricing-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Flexible Subscription Plans</h2>
+      <p>Subscribe to slot pools and manage your semester workload dynamically</p>
+    </div>
+    
+    <div class="pricing-grid">
+      <div 
+        *ngFor="let pkg of packages" 
+        class="pricing-card" 
+        [class.popular]="pkg.isPopular"
+      >
+        <div *ngIf="pkg.isPopular" class="popular-ribbon">Most Selected</div>
+        <h3>{{ pkg.name }}</h3>
+        <div class="price-box">
+          <span class="amount">{{ pkg.price }}</span>
+          <span class="period">/month</span>
+        </div>
+        <div class="slot-badge">{{ pkg.slots }}</div>
+        
+        <ul class="features-list">
+          <li *ngFor="let feature of pkg.features">
+            <span class="material-symbols-outlined">check_circle</span>
+            {{ feature }}
+          </li>
+        </ul>
+        
+        <button routerLink="/login" class="btn" [class.btn-orange]="pkg.isPopular" [class.btn-outline]="!pkg.isPopular">
+          Subscribe Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wall of Academic Trust -->
+<section class="trust-wall">
+  <div class="container">
+    <h3>Aligned with Academic Syllabus of Top Institutions</h3>
+    <div class="logo-carousel">
+      <div class="logo-item">IIT Bombay</div>
+      <div class="logo-item">BITS Pilani</div>
+      <div class="logo-item">IIT Delhi</div>
+      <div class="logo-item">VIT University</div>
+      <div class="logo-item">NIT Trichy</div>
+      <div class="logo-item">DTU Delhi</div>
+    </div>
+  </div>
+</section>
+
+<!-- Referral CTA Banner (Wireframe Page 2) -->
+<section class="referral-banner">
+  <div class="container">
+    <div class="referral-card">
+      <div class="referral-content">
+        <div class="referral-badge">REFER & EARN</div>
+        <h2>Invite Friends & Learn Together</h2>
+        <p>Share the gift of next-gen engineering education. Get 3 free course slots for every friend who subscribes to a semester plan!</p>
+        <div class="referral-action">
+          <button routerLink="/login" class="btn btn-dark-accent">Invite Friends Now</button>
+        </div>
+      </div>
+      <div class="referral-graphics">
+        <div class="gift-box-wrapper">
+          <span class="material-symbols-outlined gift-icon">featured_seasonal_and_gifts</span>
+          <div class="floating-bubble bubble-1">+3 Slots</div>
+          <div class="floating-bubble bubble-2">₹500 Cashback</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="logo-area">
+        <div class="logo-spark">
+          <span class="material-symbols-outlined">auto_stories</span>
+        </div>
+        <span class="logo-text">Magic<span>Marks</span></span>
+      </div>
+      <p>Empowering engineering students through intelligent learning pathways and active coding checkpoints.</p>
+    </div>
+    
+    <div class="footer-links-grid">
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#explore">Explore Catalog</a></li>
+          <li><a href="#mentor">Magic Mentor AI</a></li>
+          <li><a href="#pricing">Pricing Plans</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="footer-bottom-container">
+      <p>Copyright © 2026 MagicMarks. All rights reserved.</p>
+      <div class="phone-link">
+        <span class="material-symbols-outlined">call</span>
+        <a href="tel:+91800100200">+91 800-100-200</a>
+      </div>
+    </div>
+  </div>
+</footer>

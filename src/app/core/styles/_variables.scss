@@ -1,0 +1,105 @@
+/* Centralized Global Design Tokens for MagicMarks */
+
+:root {
+  /* Bold, Saturated, B2C-Compatible Color System */
+  --primary-coral: #FF6B4A;
+  --primary-peach: #F58760;
+  --primary-gradient: linear-gradient(135deg, #FF6B4A 0%, #F58760 100%);
+  
+  /* Saturated Product-specific Gradients (Extramarks style) */
+  --hero-dark-bg: #070A13;
+  --smart-class-gradient: linear-gradient(135deg, #0d9488 0%, #00b4d8 100%);
+  --learning-app-gradient: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+  --magic-mentor-gradient: linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%);
+  
+  --secondary-obsidian: #0A0E1A;
+  --secondary-slate: #1E293B;
+  --text-primary: #0A0E1A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  
+  --accent-gold: #F59E0B;
+  --accent-gold-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  
+  --accent-teal: #0D9488;
+  --accent-teal-light: #14B8A6;
+  --tech-gradient: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+  
+  --canvas-pure: #FFFFFF;
+  --canvas-warm: #FAF7F2;
+  --canvas-soft: #F4EFEA;
+  
+  --border-light: #E2E8F0;
+  --border-focus: #FF6B4A;
+  
+  /* Typography Scale */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* High-Contrast Glow Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(10, 14, 26, 0.05), 0 4px 6px -2px rgba(10, 14, 26, 0.02);
+  --shadow-xl: 0 20px 25px -5px rgba(10, 14, 26, 0.08), 0 10px 10px -5px rgba(10, 14, 26, 0.04);
+  
+  /* Saturated Glows */
+  --glow-orange: 0 0 35px rgba(255, 107, 74, 0.45);
+  --glow-teal: 0 0 35px rgba(13, 148, 136, 0.45);
+  --glow-blue: 0 0 35px rgba(59, 130, 246, 0.45);
+  --glow-purple: 0 0 35px rgba(124, 58, 237, 0.45);
+  --glow-gold: 0 0 30px rgba(245, 158, 11, 0.4);
+  
+  /* Layout Constants */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
+  
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* SCSS Responsive Breakpoint Variables */
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1200px;
+
+/* SCSS Responsive Media Query Mixins (Mobile First) */
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: #{$breakpoint-wide}) {
+    @content;
+  }
+}
+
+/* Layout Utilities Mixins */
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin glass-panel {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
